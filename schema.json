@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "runnerty-executor-pdf",
+  "definitions": {
+    "config":
+    { "type": "object",
+      "required": ["id","type"],
+      "properties":{
+        "id": {"type": "string"},
+        "type": {"type": "string", "pattern": "\\brunnerty-executor-pdf\\b"}
+      }
+    },
+    "params":
+    { "type": "object",
+      "required": ["id","html","output"],
+      "properties":{
+        "id": {"type": "string"},
+        "html": {"type": "string"},
+        "output": {"type": "string"},
+        "args": {"type": "object"},
+        "papersize":{
+          "type": "object",
+          "oneOf": [
+            {
+              "properties": {
+                "height": { "type": "string" },
+                "width": { "type": "string" }
+              },
+              "required": [ "height", "width" ],
+              "additionalProperties": false
+            },
+            {
+              "properties": {
+                "format": { "type": "string" },
+                "orientation": { "type": "string" }
+              },
+              "required": [ "format" ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "pageoptions":{
+          "type": "object",
+          "oneOf": [
+            {
+              "properties": {
+                "border": { "type": "string" }
+              },
+              "additionalProperties": false
+            },
+            {
+              "properties": {
+                "border": {
+                  "type": "object",
+                  "properties":{
+                    "top": { "type": "string" },
+                    "right": { "type": "string" },
+                    "bottom": { "type": "string" },
+                    "left": { "type": "string" }
+                  }
+                }
+              },
+              "required": [ "border" ],
+              "additionalProperties": false
+            }
+          ],
+          "header":{
+            "type": "object",
+            "properties": {
+              "height": { "type": "string" },
+              "contents": { "type": "string" }
+            }
+          },
+          "footer":{
+            "type": "object",
+            "properties": {
+              "height": { "type": "string" },
+              "contents": {
+                "type": "object",
+                "properties":{
+                  "first":{"type": "string"},
+                  "default":{"type": "string"},
+                  "last":{"type": "string"}
+                }
+              }
+            }
+          }
+        },
+        "directory": {"type": "string"},
+        "base": {"type": "string"},
+        "zoomFactor": {"type": "string"},
+        "type": {"type": "string"},
+        "quality": {"type": "string"},
+        "phantomPath": {"type": "string"},
+        "phantomArgs": {"type": "array"},
+        "script": {"type": "string"},
+        "timeout": {"type": "integer"},
+        "httpHeaders":{"type": "object"}
+      }
+    }
+  }
+}
