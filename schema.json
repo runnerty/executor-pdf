@@ -7,7 +7,7 @@
       "required": ["id","type"],
       "properties":{
         "id": {"type": "string"},
-        "type": {"type": "string", "pattern": "\\brunnerty-executor-pdf\\b"}
+        "type": {"type": "string", "pattern": "runnerty-executor-pdf"}
       }
     },
     "params":
