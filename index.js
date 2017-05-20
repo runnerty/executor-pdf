@@ -1,8 +1,8 @@
 "use strict";
 
-var pdf = require('html-pdf');
-var ejs = require('ejs');
-var fs = require('fs');
+var pdf = require("html-pdf");
+var ejs = require("ejs");
+var fs = require("fs");
 
 var Execution = global.ExecutionClass;
 
@@ -14,18 +14,18 @@ class pdfExecutor extends Execution {
   exec(options) {
     var _this = this;
 
-    var html = fs.readFileSync(options.html, 'utf8');
+    var html = fs.readFileSync(options.html, "utf8");
     if(options.args){
       html = ejs.render(html,options.args);
     }
 
-    pdf.create(html, options).toFile(options.output, function(err, res) {
+    pdf.create(html, options).toFile(options.output, function(err) {
       if (err) {
         var endOptions = {
-          end: 'error',
+          end: "error",
           messageLog: `PDF Executor: ${err}`,
           execute_err_return: `PDF Executor: ${err}`,
-          execute_return: ''
+          execute_return: ""
         };
         _this.end(endOptions);
       }else{
