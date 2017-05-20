@@ -1,9 +1,9 @@
 {
-  "name": "runnerty-executor-pdf",
+  "name": "@runnerty/executor-pdf",
   "version": "1.0.1",
   "description": "Runnerty module: PDF Genenerator executor",
   "author": "Coderty",
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
