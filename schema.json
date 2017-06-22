@@ -1,50 +1,85 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "runnerty-executor-pdf",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-pdf",
   "definitions": {
-    "config":
-    { "type": "object",
-      "required": ["id","type"],
-      "properties":{
-        "id": {"type": "string"},
-        "type": {"type": "string", "pattern": "runnerty-executor-pdf"}
+    "config": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-pdf"
+        }
       }
     },
-    "params":
-    { "type": "object",
-      "required": ["id","html","output"],
-      "properties":{
-        "id": {"type": "string"},
-        "html": {"type": "string"},
-        "output": {"type": "string"},
-        "args": {"type": "object"},
-        "papersize":{
+    "params": {
+      "type": "object",
+      "required": [
+        "id",
+        "html",
+        "output"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
+        "args": {
+          "type": "object"
+        },
+        "papersize": {
           "type": "object",
           "oneOf": [
             {
               "properties": {
-                "height": { "type": "string" },
-                "width": { "type": "string" }
+                "height": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                }
               },
-              "required": [ "height", "width" ],
+              "required": [
+                "height",
+                "width"
+              ],
               "additionalProperties": false
             },
             {
               "properties": {
-                "format": { "type": "string" },
-                "orientation": { "type": "string" }
+                "format": {
+                  "type": "string"
+                },
+                "orientation": {
+                  "type": "string"
+                }
               },
-              "required": [ "format" ],
+              "required": [
+                "format"
+              ],
               "additionalProperties": false
             }
           ]
         },
-        "pageoptions":{
+        "pageoptions": {
           "type": "object",
           "oneOf": [
             {
               "properties": {
-                "border": { "type": "string" }
+                "border": {
+                  "type": "string"
+                }
               },
               "additionalProperties": false
             },
@@ -52,50 +87,92 @@
               "properties": {
                 "border": {
                   "type": "object",
-                  "properties":{
-                    "top": { "type": "string" },
-                    "right": { "type": "string" },
-                    "bottom": { "type": "string" },
-                    "left": { "type": "string" }
+                  "properties": {
+                    "top": {
+                      "type": "string"
+                    },
+                    "right": {
+                      "type": "string"
+                    },
+                    "bottom": {
+                      "type": "string"
+                    },
+                    "left": {
+                      "type": "string"
+                    }
                   }
                 }
               },
-              "required": [ "border" ],
+              "required": [
+                "border"
+              ],
               "additionalProperties": false
             }
           ],
-          "header":{
+          "header": {
             "type": "object",
             "properties": {
-              "height": { "type": "string" },
-              "contents": { "type": "string" }
+              "height": {
+                "type": "string"
+              },
+              "contents": {
+                "type": "string"
+              }
             }
           },
-          "footer":{
+          "footer": {
             "type": "object",
             "properties": {
-              "height": { "type": "string" },
+              "height": {
+                "type": "string"
+              },
               "contents": {
                 "type": "object",
-                "properties":{
-                  "first":{"type": "string"},
-                  "default":{"type": "string"},
-                  "last":{"type": "string"}
+                "properties": {
+                  "first": {
+                    "type": "string"
+                  },
+                  "default": {
+                    "type": "string"
+                  },
+                  "last": {
+                    "type": "string"
+                  }
                 }
               }
             }
           }
         },
-        "directory": {"type": "string"},
-        "base": {"type": "string"},
-        "zoomFactor": {"type": "string"},
-        "type": {"type": "string"},
-        "quality": {"type": "string"},
-        "phantomPath": {"type": "string"},
-        "phantomArgs": {"type": "array"},
-        "script": {"type": "string"},
-        "timeout": {"type": "integer"},
-        "httpHeaders":{"type": "object"}
+        "directory": {
+          "type": "string"
+        },
+        "base": {
+          "type": "string"
+        },
+        "zoomFactor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "string"
+        },
+        "phantomPath": {
+          "type": "string"
+        },
+        "phantomArgs": {
+          "type": "array"
+        },
+        "script": {
+          "type": "string"
+        },
+        "timeout": {
+          "type": "integer"
+        },
+        "httpHeaders": {
+          "type": "object"
+        }
       }
     }
   }
