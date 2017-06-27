@@ -6,7 +6,7 @@
 ```json
 {
   "id":"pdf_default",
-  "type":"@runnerty/executor-pdf"
+  "type":"@runnerty-executor-pdf"
 }
 ```
 
