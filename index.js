@@ -24,8 +24,8 @@ class pdfExecutor extends Execution {
         var endOptions = {
           end: "error",
           messageLog: `PDF Executor: ${err}`,
-          execute_err_return: `PDF Executor: ${err}`,
-          execute_return: ""
+          err_output: `PDF Executor: ${err}`,
+          msg_output: ""
         };
         _this.end(endOptions);
       }else{
