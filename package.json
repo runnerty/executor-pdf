@@ -1,13 +1,13 @@
 {
   "name": "@runnerty/executor-pdf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Runnerty module: PDF Genenerator executor",
   "author": "Coderty",
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Coderty/runnerty-executor-pdf.git"
+    "url": "git+https://github.com/runnerty/executor-pdf.git"
   },
   "keywords": [
     "runnerty",
@@ -15,9 +15,9 @@
     "pdf"
   ],
   "bugs": {
-    "url": "https://github.com/Coderty/runnerty-executor-pdf/issues"
+    "url": "https://github.com/runnerty/executor-pdf/issues"
   },
-  "homepage": "https://github.com/Coderty/runnerty-executor-pdf#readme",
+  "homepage": "https://github.com/runnerty/executor-pdf#readme",
   "dependencies": {
     "ejs": "^2.5.7",
     "html-pdf": "^2.1.0"
