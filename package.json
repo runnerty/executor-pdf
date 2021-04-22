@@ -20,6 +20,6 @@
   "homepage": "https://github.com/runnerty/executor-pdf#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "html-pdf": "^2.1.0"
+    "html-pdf": "^3.0.0"
   }
 }
